@@ -1,0 +1,19 @@
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
+
+@section ('content')
+    <p>Bienvenidos</p>
+@stop
+
+@section('css')
+    {{-- ADD HERE EXTRA STYLESHEETS--}}
+@stop
+
+@section('js')
+    {{-- ADD HERE EXTRA javascrip--}}
+@stop
