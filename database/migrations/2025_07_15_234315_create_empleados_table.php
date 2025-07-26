@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
             $table->integer('ci')->unique();
-            $table->string('Nombre completo');
+            $table->string('nombre_completo');
             $table->string('email')->unique();
             $table->string('rol');
             $table->unsignedBigInteger('id_turno')->nullable();
             $table->timestamps();
-
+            
             $table->foreign('id_turno')->references('id')->on('turnos')->onDelete('set null');
         });
     }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Empleados extends Model
+class Empleado extends Model
 {
     protected $fillable = [
         'ci',
@@ -13,7 +13,10 @@ class Empleados extends Model
         'rol',
         'id_turno',
     ];
-    public function turno(){
+
+    public function turno()
+    {
         return $this->belongsTo(Turno::class, 'id_turno');
     }
 }
+// aqui prueba
