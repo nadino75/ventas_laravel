@@ -338,19 +338,14 @@ return [
             'url' => 'empleados',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        [
-            'text' => 'Clientes',
-            'url' => 'clientes',
+                [
+            'text' => 'Estudiantes',
+            'url' => 'estudiantes',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'Detalle Pedidos',
-            'url' => 'detalle_pedidos',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Inventarios',
-            'url' => 'inventarios',
+            'text' => 'Materias',
+            'url' => 'materias',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [

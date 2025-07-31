@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class turno extends Model
 {
-    protected $fillable=[
+    protected $fillable =[
         'hora_entrada',
         'hora_salida',
-        'dias_descanso'
+        'dias_descanso',
     ];
 }

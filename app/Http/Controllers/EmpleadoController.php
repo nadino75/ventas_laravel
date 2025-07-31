@@ -2,23 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Empleado;
 use App\Models\Turno;
-use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
 {
+
     public function index()
     {
         $empleados = Empleado::with('turno')->get();
         return view('empleados.index', compact('empleados'));
     }
-
+    
     public function create()
     {
         $turnos = Turno::all();
         return view('empleados.create', compact('turnos'));
     }
+
 
     public function store(Request $request)
     {
@@ -29,10 +31,17 @@ class EmpleadoController extends Controller
             'rol' => 'required|string|max:50',
             'id_turno' => 'nullable|exists:turnos,id',
         ]);
-
+        
         Empleado::create($request->all());
-        return redirect()->route('empleados.index')->with('success', 'Empleado registrado correctamente.');
+        return redirect()->route('empleados.index')->with('success', 'Empleado registrado correctamente');
     }
+
+
+    public function show(string $id)
+    {
+        
+    }
+
 
     public function edit(Empleado $empleado)
     {
@@ -40,7 +49,8 @@ class EmpleadoController extends Controller
         return view('empleados.edit', compact('empleado', 'turnos'));
     }
 
-    public function update(Request $request, Empleado $empleado)
+
+    public function update(Request $request, Empleado $empleado )
     {
         $request->validate([
             'ci' => 'required|integer|unique:empleados,ci,' . $empleado->id,
@@ -54,9 +64,10 @@ class EmpleadoController extends Controller
         return redirect()->route('empleados.index')->with('success', 'Empleado actualizado correctamente.');
     }
 
+
     public function destroy(Empleado $empleado)
     {
         $empleado->delete();
-        return redirect()->route('empleados.index')->with('success', 'Empleado eliminado correctamente.');
+        return redirect()->route('empleados.index')->with('success', 'Empleado eliminado correctamente' );
     }
 }

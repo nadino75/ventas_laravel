@@ -13,10 +13,9 @@ class Empleado extends Model
         'rol',
         'id_turno',
     ];
-
     public function turno()
     {
         return $this->belongsTo(Turno::class, 'id_turno');
     }
+
 }
-// aqui prueba

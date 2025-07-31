@@ -60,9 +60,9 @@ class TurnoController extends Controller
     public function update(Request $request,Turno $turno)
     {
         $request->validate([
-            'hora_entrada' => 'required',
-            'hora_salida' => 'required',
-            'dias_descanso' => 'required| string | max:100',
+         'hora_entrada' => 'required',
+         'hora_salida' => 'required',
+         'dias_descanso' => 'required| string | max:100',
         ]);
         $turno->update($request->all());
         return redirect()->route('turnos.index')->with('success', 'Turno actualizado correctamente');
